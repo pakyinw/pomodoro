@@ -2,11 +2,37 @@
   "name": "pomodoro",
   "private": true,
   "version": "0.0.0",
+  "main": "./electron-main.js",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pack": "electron-builder --dir",
+    "pack-dist": "electron-builder",
+    "electron": "electron"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "productName": "Example APP",
+    "directories": {
+      "output": "pack"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "electron-main.js"
+    ],
+    "asar": true,
+    "win": {
+      "icon": "src/assets/icon.png"
+    },
+    "mac": {
+      "icon": "src/assets/icon.png"
+    },
+    "linux": {
+      "icon": "src/assets/icon.png"
+    }
   },
   "dependencies": {
     "vue": "^3.3.4"
@@ -15,6 +41,8 @@
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@vitejs/plugin-vue": "^4.2.3",
+    "electron": "^26.0.0",
+    "electron-builder": "^24.6.3",
     "husky": "^8.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
