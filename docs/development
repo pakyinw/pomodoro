@@ -1,0 +1,15 @@
+# development
+
+# 8-16-2023
+commitlint requires "removing type="module"" in package.json
+
+Electron
+[https://medium.com/something-about-javascript/electron-%E6%89%93%E5%8C%85%E6%88%90%E5%9F%B7%E8%A1%8C%E6%AA%94-e968255ec173]
+
+I solve my problem adding the dot (".") of the relative path before the slash ("/") like this:
+[https://github.com/electron-userland/electron-builder/issues/6884]
+
+Adding base ./
+[https://vitejs.dev/config/shared-options.html#base]
+
+base ./ affects the public folder.
