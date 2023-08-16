@@ -7,7 +7,8 @@ app.on('ready', () => {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true // Allow Node.js integration in your Vue components
+      nodeIntegration: true, // Allow Node.js integration in your Vue components
+      webSecurity: false
     }
   });
 
